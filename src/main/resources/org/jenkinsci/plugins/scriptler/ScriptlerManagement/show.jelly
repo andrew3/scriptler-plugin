@@ -31,7 +31,7 @@ THE SOFTWARE.
 	<script src="${it.pluginResourcePath}mode/clike/clike.js"></script>
 	<link rel="stylesheet" href="${it.pluginResourcePath}mode/clike/clike.css" ></link>
 	<style>.CodeMirror {border: 2px inset #dee;}</style>
-	
+
 	<!--
 	Concerning the "type" attribute, as it's a popup we desire to have full size usage of the screen,
 	not used in core version required by this plugin but not disturbing the correct processing
@@ -55,21 +55,21 @@ THE SOFTWARE.
 						<f:textbox name="comment" value="${script.comment}" disabled="true"/>
 					</f:entry>
                     <f:block>
-	                    <table>
+	                    <div>
 	                        <f:optionalBlock name="defineParams" title="${%ParamDefinition}" checked="${!empty(script.parameters)}" >
 	                            <f:entry title="${%Parameters}" field="parameters" disabled="true">
 	                                <f:repeatable var="param" items="${script.parameters}" name="parameters" noAddButton="true" minimum="1">
-	                                    <table width="100%">
+	                                    <div style="width:100%">
 	                                        <f:entry>
 	                                            ${%ParameterName} <input type="text" name="name" value="${param.name}" size="50" disabled="true"/>
 	                                            ${%ParameterDefaultValue} <input type="text" name="value" value="${param.value}" size="80" disabled="true"/>
 	                                        </f:entry>
-	                                    </table>
+	                                    </div>
 	                                </f:repeatable>
 	                            </f:entry>
 	                        </f:optionalBlock>
-	                    </table>
-	                </f:block>					
+	                    </div>
+	                </f:block>
 					<f:entry title="${%Script}">
 						<textarea id="script" name="script" style="width:100%; height:20em">
 							<j:out value="${script.script}" />
